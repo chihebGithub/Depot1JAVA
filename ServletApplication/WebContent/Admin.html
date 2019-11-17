@@ -1,0 +1,58 @@
+<html><head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+   <form action="PizzaAdmin" method="post" onsubmit="return verif()">
+   <h1>Pizza du Jour </h1>
+<div>
+   <label>Choisir Pizza </label>
+   <select name="pizza" id="pizza">
+    <option selected="" disabled="" value="">--Please choose an option--</option>
+    <option value="tomate">Pizza tomate</option>
+    <option value="mozzarella">Pizza mozzarella</option>
+    <option value="Reine">Pizza Reine</option>
+    <option value="jambon">Pizza jambon</option>
+    <option value="Napolitaine">Pizza Napolitaine</option>
+    <option value="napoletana">Pizza napoletana</option>
+</select>
+   
+   
+</div>
+<div>
+   <label>Prix</label>
+   <input type="number" id="txt_prix" name="txt_prix" step="0.00000001">
+    
+</div>
+
+
+
+ <input type="submit" value="Envoyer">
+  <input type="reset" value="Annuler">
+ 
+ </form>
+   
+  <script>
+ function verif()
+   {
+	 if( document.getElementById("pizza").selectedIndex==0)
+	  {
+	   alert("Slv choisir le type de Pizza ");
+	   return false;
+	  }
+	 else if ( document.getElementById("txt_prix").value =="")
+	  {
+	   alert("Slv Saisir le prix de Pizza ");
+	   return false;
+	  }
+	 else {
+	      document.myForm.submit(); // Form will be submitted by it's name
+	 }
+   }
+</script> 
+ 
+
+
+
+
+</body></html>
