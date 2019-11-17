@@ -1,0 +1,119 @@
+
+
+Tue Nov 12 20:27:00 2019
+Command line: TestDisk
+
+TestDisk 7.0, Data Recovery Utility, April 2015
+Christophe GRENIER <grenier@cgsecurity.org>
+http://www.cgsecurity.org
+OS: Linux, kernel 5.0.0-32-generic (#34~18.04.2-Ubuntu SMP Thu Oct 10 10:36:02 UTC 2019) x86_64
+Compiler: GCC 7.2
+ext2fs lib: 1.44.1, ntfs lib: libntfs-3g, reiserfs lib: none, ewf lib: none, curses lib: ncurses 6.0
+/dev/sda: LBA, LBA48, DCO support
+/dev/sda: size       976773168 sectors
+/dev/sda: user_max   976773168 sectors
+/dev/sda: dco        976773168 sectors
+Warning: can't get size for Disk /dev/mapper/control - 0 B - 0 sectors, sector size=512
+Hard disk list
+Disk /dev/sda - 500 GB / 465 GiB - CHS 60801 255 63, sector size=512 - HGST HTS545050A7E380, S/N:TM8512ZJ28JARP, FW:GG2OACA0
+Disk /dev/sdb - 31 GB / 29 GiB - CHS 30000 64 32, sector size=512 - VendorCo ProductCode, FW:2.00
+
+Partition table type (auto): Intel
+Disk /dev/sdb - 31 GB / 29 GiB - VendorCo ProductCode
+Partition table type: Intel
+
+Analyse Disk /dev/sdb - 31 GB / 29 GiB - CHS 30000 64 32
+Geometry from i386 MBR: head=255 sector=63
+BAD_RS LBA=2048 1056
+NTFS at 1/0/1
+heads/cylinder 255 (NTFS) != 64 (HD)
+sect/track 63 (NTFS) != 32 (HD)
+get_geometry_from_list_part_aux head=64 nbr=2
+get_geometry_from_list_part_aux head=8 nbr=2
+get_geometry_from_list_part_aux head=16 nbr=2
+get_geometry_from_list_part_aux head=32 nbr=2
+get_geometry_from_list_part_aux head=64 nbr=2
+Current partition structure:
+Warning: number of heads/cylinder mismatches 255 (NTFS) != 64 (HD)
+Warning: number of sectors per track mismatches 63 (NTFS) != 32 (HD)
+ 1 * HPFS - NTFS              1   0  1 29999  63 32   61437952
+
+Warning: Bad starting sector (CHS and LBA don't match)
+
+search_part()
+Disk /dev/sdb - 31 GB / 29 GiB - CHS 30000 64 32
+NTFS at 1/0/1
+heads/cylinder 255 (NTFS) != 64 (HD)
+sect/track 63 (NTFS) != 32 (HD)
+filesystem size           61437952
+sectors_per_cluster       8
+mft_lcn                   786432
+mftmirr_lcn               2
+clusters_per_mft_record   -10
+clusters_per_index_record 1
+     HPFS - NTFS              1   0  1 29999  63 32   61437952
+     NTFS, blocksize=4096, 31 GB / 29 GiB
+get_geometry_from_list_part_aux head=64 nbr=2
+get_geometry_from_list_part_aux head=8 nbr=2
+get_geometry_from_list_part_aux head=16 nbr=2
+get_geometry_from_list_part_aux head=32 nbr=2
+get_geometry_from_list_part_aux head=64 nbr=2
+
+Results
+   * HPFS - NTFS              1   0  1 29999  63 32   61437952
+     NTFS, blocksize=4096, 31 GB / 29 GiB
+
+Hint for advanced users. dmsetup may be used if you prefer to avoid to rewrite the partition table for the moment:
+echo "0 61437952 linear /dev/sdb 2048" | dmsetup create test0
+
+interface_write()
+ 1 * HPFS - NTFS              1   0  1 29999  63 32   61437952
+
+search_part()
+Disk /dev/sdb - 31 GB / 29 GiB - CHS 30000 64 32
+NTFS at 1/0/1
+heads/cylinder 255 (NTFS) != 64 (HD)
+sect/track 63 (NTFS) != 32 (HD)
+filesystem size           61437952
+sectors_per_cluster       8
+mft_lcn                   786432
+mftmirr_lcn               2
+clusters_per_mft_record   -10
+clusters_per_index_record 1
+     HPFS - NTFS              1   0  1 29999  63 32   61437952
+     NTFS, blocksize=4096, 31 GB / 29 GiB
+NTFS at 29999/63/32
+heads/cylinder 255 (NTFS) != 64 (HD)
+sect/track 63 (NTFS) != 32 (HD)
+filesystem size           61437952
+sectors_per_cluster       8
+mft_lcn                   786432
+mftmirr_lcn               2
+clusters_per_mft_record   -10
+clusters_per_index_record 1
+     HPFS - NTFS              1   0  1 29999  63 32   61437952
+     NTFS found using backup sector, blocksize=4096, 31 GB / 29 GiB
+get_geometry_from_list_part_aux head=64 nbr=2
+get_geometry_from_list_part_aux head=8 nbr=2
+get_geometry_from_list_part_aux head=16 nbr=2
+get_geometry_from_list_part_aux head=32 nbr=2
+get_geometry_from_list_part_aux head=64 nbr=2
+
+Results
+   * HPFS - NTFS              1   0  1 29999  63 32   61437952
+     NTFS, blocksize=4096, 31 GB / 29 GiB
+
+Hint for advanced users. dmsetup may be used if you prefer to avoid to rewrite the partition table for the moment:
+echo "0 61437952 linear /dev/sdb 2048" | dmsetup create test0
+Can't open backup.log file: Aucun fichier ou dossier de ce type
+interface_load
+
+interface_write()
+ 1 * HPFS - NTFS              1   0  1 29999  63 32   61437952
+simulate write!
+
+write_mbr_i386: starting...
+write_all_log_i386: starting...
+No extended partition
+
+TestDisk exited normally.
