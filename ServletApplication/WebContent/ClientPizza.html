@@ -5,6 +5,34 @@
 <title>Insert title here</title>
 </head>
 <body>
+        <form action="ClientPizzaServlet" method="post">
+   <h1>Pizza du Jour </h1>
+<div> 
+   <label>Choisir dessert </label>
+   <select name="dessert" id="dessert">
+    <option selected disabled >--Please choose an option--</option>
+    <option value="italien">dessert italien</option>
+    <option value="fraise">dessert fraise</option>
+    <option value="banane">dessert "banane"</option>
+   
+   </select>
+   
+   
+</div>
+<div>
+   <label>Quantité :</label>
+   <input type="number" id="txt_qt" name="txt_qt" step="0.00000001">
+    
+</div>
+
+
+
+ <input type="submit" value="Valider">
+  <input type="reset" value="Annuler">
+ 
+ </form>
+  
+
 
 </body>
 </html> 
