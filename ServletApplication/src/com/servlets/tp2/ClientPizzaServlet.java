@@ -38,7 +38,6 @@ public class ClientPizzaServlet extends HttpServlet {
 		DateFormat df = DateFormat.getDateInstance(DateFormat.MEDIUM);
 		String today = df.format(day);
 		String b=request.getAttribute("myprix").toString();
-		System.out.println(b);
 		Double prixfinal =prixPizza+Double.parseDouble(b);
 		response.setContentType("text/html");
 		response.setCharacterEncoding( "UTF-8" );
