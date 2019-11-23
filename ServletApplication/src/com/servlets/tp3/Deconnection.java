@@ -23,7 +23,7 @@ public class Deconnection extends HttpServlet {
     public Deconnection() {
         super();
         // TODO Auto-generated constructor stub
-    }
+    }         
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)

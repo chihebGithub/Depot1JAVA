@@ -44,7 +44,7 @@ public class SimpleCounterServlet extends HttpServlet {
 		String pass = request.getParameter("password");
 		if ((userAuthorized.get(login) != null && userAuthorized.get(login).equals(pass)))
 		
-		{
+		{       
 		
 		 session.setAttribute("log", login);
 			 RequestDispatcher dispatcher = request.getRequestDispatcher("AccesSite");
