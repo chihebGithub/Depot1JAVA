@@ -1,6 +1,8 @@
 package com.servlets.tp3;
 
 import java.io.IOException;
+
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -30,29 +32,13 @@ public class AccesSite extends HttpServlet {
 		// TODO Auto-generated method stub
 		HttpSession session = request.getSession();
 		String login =(String) session.getAttribute("log");
+		if(login==null)
+				{
+			    login="";
+				}
 		// TODO Auto-generated method stub
-				response.setContentType("text/html");
-				response.setCharacterEncoding( "UTF-8" );
-				response.getWriter().append("<!DOCTYPE html> <html><head><title>Deconnection </title>")
-				.append("<bodu><p>")
-				.append("<form action=\"Deconnection\" method=\"get\">")
-				
-				.append("Bonjour :  <strong>").append(login.toUpperCase())
-				.append("</strong>")
-				.append("</p>")
-				.append("<div class=\"scrollmenu\">" + 
-						"  <a href=\"#home\">Home</a>" +    
-						"  <a href=\"#news\">News</a>" + 
-						"  <a href=\"#contact\">Contact</a>" + 
-						"  <a href=\"#about\">About</a>" + 
-						"  <a href=\"#support\">Support</a>" + 
-						"  <a href=\"#blog\">Blog</a>" + 
-						"  <a href=\"#tools\">Tools</a>" + 
-						"</div").append("<br> <div>")
-				.append("<input type=\"submit\" value=\"déconnection\" />")
-				.append("</div>")
-				.append("</form>")
-				.append("</body></html>");
+		RequestDispatcher dispatcher = request.getRequestDispatcher("Menu.jsp");
+		 dispatcher.forward(request, response);
 	}
           
 	/**

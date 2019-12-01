@@ -19,10 +19,12 @@ public class JSPexercice2 extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		  response.setIntHeader("Refresh",10);
+		  response.setIntHeader("Refresh",5);
 		response.getWriter().append("<html><head><title>time</title></head><body>"
 				+ "<p style=\"color:blue\">  Current Time :</p> <p>").append(new Date().toString()+""
-						+ "</body></html>");
+						+ "</body></html>").append("");
+		 response.sendRedirect("http://www.ipst.edunet.tn/pluginfile.php/86981/mod_resource/content/0/Chapitre%201%20ADS.pdf");
+		
 	}
 
 }
